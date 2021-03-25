@@ -1,5 +1,5 @@
 NAME = phonebook
-CC = clang++ -g3 -fsanitize=address
+CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp contact.cpp phonebook.cpp 

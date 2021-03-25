@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 21:27:08 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/25 00:37:32 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/25 11:39:57 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 class Contact
 {
 private:
-	int			index;
-	std::string	info[12];
-	std::string	field_names[12];
+	int					index;
+	std::string			info[12];
+	static std::string	field_names[12];
 	enum Fields
 	{
 		FirstName,

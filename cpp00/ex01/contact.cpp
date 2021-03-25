@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 19:55:38 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/25 00:43:12 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/25 11:55:04 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 Contact::Contact()
 {
-	field_names[0] = "First Name";
-	field_names[1] = "Last Name";
-	field_names[2] = "Nick Name";
-	field_names[3] = "Login";
-	field_names[4] = "Postal";
-	field_names[5] = "Email";
-	field_names[6] = "Address";
-	field_names[7] = "Phone Number";
-	field_names[8] = "Birthday";
-	field_names[9] = "Favorite Meal";
-	field_names[10] = "Underwear Color";
-	field_names[11] = "Darkest Secret";
 };
 
 Contact::~Contact()
 {
+};
+
+std::string	Contact::field_names[12] =
+{
+	"First Name",
+	"Last Name",
+	"Nick Name",
+	"Login",
+	"Postal",
+	"Email",
+	"Address",
+	"Phone Number",
+	"Birthday",
+	"Favorite Meal",
+	"Underwear Color",
+	"Darkest Secret"
 };
 
 bool Contact::set_info(int index)
@@ -40,10 +44,10 @@ bool Contact::set_info(int index)
 	name_len_sum = 0;
 	for (int i = 0; i <= DarkestSecret; i++)
 	{
-		std::cout << field_names[i] << " : ";
+		std::cout << Contact::field_names[i] << " : ";
 		std::getline(std::cin, info[i]);
 		if (i >= FirstName && i <= NickName)
-			name_len_sum += info[i].length();
+			name_len_sum += this->info[i].length();
 		if (i == NickName && name_len_sum == 0)
 		{
 			std::cout << "You must enter your Name or Nick Name" << std::endl;
@@ -56,7 +60,7 @@ bool Contact::set_info(int index)
 void Contact::show_info(void)
 {
 	for (int i = 0; i <= DarkestSecret; i++)
-		std::cout << field_names[i] << " : " << info[i] << std::endl;
+		std::cout << Contact::field_names[i] << " : " << this->info[i] << std::endl;
 };
 
 void Contact::show_header(void)
@@ -67,9 +71,9 @@ void Contact::show_header(void)
 	{
 		std::cout << "|";
 		if (info[i].length() > 10)
-			std::cout << std::right << info[i].substr(0, 9) << '.';
+			std::cout << std::right << this->info[i].substr(0, 9) << '.';
 		else
-			std::cout << std::setw(10) << std::right << info[i];
+			std::cout << std::setw(10) << std::right << this->info[i];
 	}
 	std::cout << "|" << std::endl;
 };
