@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:33 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 19:34:02 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/26 20:58:52 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main()
 	ev.zombies_life(zombie);
 	for (int i = 0; i < 3; i++)
 	{
-		sleep(1);
+		usleep(USLEEPTIME);
 		std::cout << std::endl;
 		zombie = ev.randomChump();
 		ev.zombies_life(zombie);

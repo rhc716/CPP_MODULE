@@ -1,34 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:20 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:58:43 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/26 20:58:14 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 
-ZombieEvent::ZombieEvent(void)
+ZombieHorde::ZombieHorde(int n)
 {
+	std::srand(std::time(NULL));
+	std::cout << "Hordes of zombies gather...\n\n";
+	this->horde = new Zombie*[n];
+	for (int i = 0; i < n; i++)
+	{
+		this->horde[i] = randomChump();
+	}
+	this->nbr_zombies = n;
 }
 
-ZombieEvent::~ZombieEvent(void)
+ZombieHorde::~ZombieHorde(void)
 {
+	for(int i = 0; i < this->nbr_zombies; i++)
+	{
+		delete(this->horde[i]);
+		usleep(USLEEPTIME);
+	}
+	delete(this->horde);
+	std::cout << "\nThe zombie Horde is gone..." << std::endl;
 }
 
-void		ZombieEvent::setZombieType(Zombie *zombie, std::string type)
+void		ZombieHorde::setZombieType(Zombie *zombie, std::string type)
 {
 	zombie->set_type(type);
 };
 
-Zombie		*ZombieEvent::newZombie(std::string name)
+Zombie		*ZombieHorde::newZombie(std::string name)
 {
 	Zombie *zombie = new Zombie(name);
 	return (zombie);
+};
+
+Zombie		*ZombieHorde::randomChump(void)
+{
+	Zombie *zombie = new Zombie(get_random_name());
+	ZombieHorde::setZombieType(zombie, get_random_type());
+	return (zombie);
+};
+
+void		ZombieHorde::announce(void)
+{
+	for(int i = 0; i < this->nbr_zombies; i++)
+	{
+		this->horde[i]->announce();
+		usleep(USLEEPTIME);
+	}
 };
 
 std::string get_random_name(void)
@@ -38,7 +69,6 @@ std::string get_random_name(void)
 	std::string color[10] = {"Red", "Blue", "Black", "Violet", "Navy", "Brown", "Purple", "Gold", "Whilte", "Silver"};
 	std::string animal[10] = {"Dog", "Cat", "Horse", "Mouse", "Sheep", "Cow", "Bear", "Wolf", "Lion", "Monkey"};
 
-	std::srand(std::time(NULL));
 	random_num = std::rand() % 10;
 	random_name = color[random_num] + " ";
 	random_num = std::rand() % 10;
@@ -47,21 +77,13 @@ std::string get_random_name(void)
 	return (random_name);
 };
 
-Zombie		*ZombieEvent::randomChump(void)
+std::string get_random_type(void)
 {
-	Zombie *zombie = new Zombie(get_random_name());
-	zombie->announce();
-	return (zombie);
-};
+	int			random_num;
+	std::string random_type;
+	std::string type[5] = {"Fire", "Water", "Wind", "Poison", "Lightning"};
 
-void		ZombieEvent::zombies_life(Zombie *zombie)
-{
-	usleep(USLEEPTIME);
-	zombie->set_type("Smart");
-	zombie->announce();
-	usleep(USLEEPTIME);
-	zombie->set_type("Too Smart");
-	zombie->announce();
-	usleep(USLEEPTIME);
-	delete(zombie);
-}
+	random_num = std::rand() % 5;
+	random_type = type[random_num];
+	return (random_type);
+};

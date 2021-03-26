@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 17:21:04 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:58:36 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/26 17:20:38 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/26 18:54:25 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
-# define USLEEPTIME 300000
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-# include "Zombie.hpp"
-# include <ctime>
-# include <unistd.h>
+# include <iostream>
 
-class ZombieEvent
+class Zombie
 {
 private:
-	
-public:
-	ZombieEvent(void);
-	~ZombieEvent(void);
+	std::string zombie_name;
+	std::string zombie_type;
 
-	void		setZombieType(Zombie *zombie, std::string type);
-	Zombie		*newZombie (std::string name);
-	Zombie		*randomChump(void);
-	void		zombies_life(Zombie *zombie);
+public:
+	Zombie(void);
+	Zombie(std::string name);
+	~Zombie(void);
+
+	void announce(void);
+	void set_type(std::string type);
 };
 
 #endif

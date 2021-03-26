@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 17:21:04 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:58:36 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/26 17:21:31 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/26 20:22:11 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
-# define USLEEPTIME 300000
+#include "Zombie.hpp"
 
-# include "Zombie.hpp"
-# include <ctime>
-# include <unistd.h>
-
-class ZombieEvent
+Zombie::Zombie()
 {
-private:
-	
-public:
-	ZombieEvent(void);
-	~ZombieEvent(void);
+}
 
-	void		setZombieType(Zombie *zombie, std::string type);
-	Zombie		*newZombie (std::string name);
-	Zombie		*randomChump(void);
-	void		zombies_life(Zombie *zombie);
+Zombie::Zombie(std::string name)
+{
+	this->zombie_name = name;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << this->zombie_name << " is dead" << std::endl;
+}
+
+void Zombie::set_type(std::string type)
+{
+	this->zombie_type = type;
 };
 
-#endif
+void Zombie::announce(void)
+{
+	std::cout << "<" << this->zombie_name << " (" << this->zombie_type << ")> "
+	<< "Braiiiiiiinnnssss..." << std::endl;
+};
