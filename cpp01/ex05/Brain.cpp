@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 17:20:38 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 21:34:15 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/26 21:33:50 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/26 22:13:04 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Brain.hpp"
 
-# include <iostream>
-
-class Zombie
+Brain::Brain(void)
 {
-private:
-	std::string zombie_name;
-	std::string zombie_type;
+}
 
-public:
-	Zombie(void);
-	Zombie(std::string name);
-	~Zombie(void);
+Brain::~Brain(void)
+{
+}
 
-	void announce(void);
-	void set_type(std::string type);
+std::string Brain::identify(void)
+{
+	std::stringstream ss;
+	ss << "0x" << std::uppercase << std::hex << (uintptr_t)this;
+	return (ss.str());
 };
-
-#endif
