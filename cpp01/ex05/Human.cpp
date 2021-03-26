@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 21:33:55 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 21:54:57 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/26 22:23:36 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string Human::identify(void)
 	return (this->brain.identify());
 };
 
-Brain		Human::getBrain(void)
+Brain		&Human::getBrain(void)
 {
 	return (this->brain);
 };
