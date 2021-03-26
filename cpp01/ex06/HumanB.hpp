@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 21:33:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 22:30:50 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/26 22:41:53 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/27 00:27:35 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-#include <iostream>
-#include <sstream>
-#include <string>
+# include "Weapon.hpp"
 
-class Brain
+class HumanB
 {
 private:
-	int cell;
+	std::string name;
+	Weapon		*weapon;
 
 public:
-	Brain(void);
-	~Brain(void);
+	HumanB(std::string name);
+	HumanB(std::string name, Weapon &weapon);
+	~HumanB(void);
 
-	std::string identify(void);
+	void	attack(void);
+	void	setWeapon(Weapon &weapon);
 };
 
 #endif

@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 21:33:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 22:30:50 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/26 22:41:21 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/26 23:54:14 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-#include <iostream>
-#include <sstream>
-#include <string>
+# include <iostream>
 
-class Brain
+class Weapon
 {
 private:
-	int cell;
+	std::string weapon_type;
 
 public:
-	Brain(void);
-	~Brain(void);
+	Weapon(std::string type);
+	~Weapon(void);
 
-	std::string identify(void);
+	void				setType(std::string type);
+	const std::string	&getType(void);
 };
 
 #endif

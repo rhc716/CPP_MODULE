@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 21:33:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 22:30:50 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/26 22:49:58 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/27 00:29:08 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <sstream>
-#include <string>
-
-class Brain
+HumanB::HumanB(std::string name)
 {
-private:
-	int cell;
-
-public:
-	Brain(void);
-	~Brain(void);
-
-	std::string identify(void);
+	this->name = name;
 };
 
-#endif
+HumanB::HumanB(std::string name, Weapon &weapon)
+{
+	this->name = name;
+	this->weapon = &weapon;
+};
+
+HumanB::~HumanB(void)
+{
+}
+
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	this->weapon = &weapon;
+};
+
+void	HumanB::attack(void)
+{
+	std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
+};
