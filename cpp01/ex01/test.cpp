@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 19:22:02 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/27 20:13:09 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/27 20:23:56 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		main()
 {
 	memoryLeak();
-	system("leaks a.out | cat $1 | grep leaked | echo \"\nleak check : $1\";");
+	system("echo \"\n===== leak check =====\n\"; leaks a.out | grep leaked");
 	return (0);
 }
