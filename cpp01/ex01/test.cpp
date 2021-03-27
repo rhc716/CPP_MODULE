@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 17:06:43 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/27 20:09:31 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/27 19:22:02 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/27 20:13:09 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "test.hpp"
 
-void	memoryLeak()
+int		main()
 {
-	std::string* panther = new std::string("String panther");
-	std::cout << *panther << std::endl;
-	//delete panther;
+	memoryLeak();
+	system("leaks a.out | cat $1 | grep leaked | echo \"\nleak check : $1\";");
+	return (0);
 }
