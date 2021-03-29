@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:23:18 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/25 17:12:52 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 21:00:30 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Account::Account( void )
 	std::cout << "amount:0;";
 	std::cout << "created" << std::endl;
 	this->_nbAccounts++;
-};
+}
 
 Account::Account( int initial_deposit )
 {
@@ -48,7 +48,7 @@ Account::Account( int initial_deposit )
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "created" << std::endl;
 	this->_nbAccounts++;
-};
+}
 
 Account::~Account( void )
 {
@@ -58,27 +58,27 @@ Account::~Account( void )
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
 	this->_nbAccounts--;
-};
+}
 
 int		Account::getNbAccounts( void )
 {
 	return (Account::_nbAccounts);
-};
+}
 
 int		Account::getTotalAmount( void )
 {
 	return (Account::_totalAmount);
-};
+}
 
 int		Account::getNbDeposits( void )
 {
 	return (Account::_totalNbDeposits);
-};
+}
 
 int		Account::getNbWithdrawals( void )
 {
 	return (Account::_totalNbWithdrawals);
-};
+}
 
 void	Account::_displayTimestamp( void )
 {
@@ -97,7 +97,7 @@ void	Account::_displayTimestamp( void )
 	std::cout << std::setw(2) << timeinfo->tm_min;
 	std::cout << std::setw(2) << timeinfo->tm_sec;
 	std::cout << "] ";
-};
+}
 
 void	Account::displayAccountsInfos( void )
 {
@@ -107,7 +107,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "total:" << Account::_totalAmount << ";";
 	std::cout << "deposits:" << Account::_totalNbDeposits << ";";
 	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
-};
+}
 
 void	Account::makeDeposit( int deposit )
 {
@@ -122,7 +122,7 @@ void	Account::makeDeposit( int deposit )
 	Account::_totalNbDeposits++;
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "nb_deposits:" << this->_nbDeposits << std::endl;
-};
+}
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
@@ -147,13 +147,13 @@ bool	Account::makeWithdrawal( int withdrawal )
 		std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	}
 	return (true);
-};
+}
 
 int		Account::checkAmount( void ) const
 {
 	this->_checkAmountCount++;
 	return (0);
-};
+}
 
 void	Account::displayStatus( void ) const
 {
@@ -164,4 +164,4 @@ void	Account::displayStatus( void ) const
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "deposits:" << this->_nbDeposits << ";";
 	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
-};
+}

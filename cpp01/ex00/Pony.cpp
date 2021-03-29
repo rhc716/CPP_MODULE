@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 18:11:01 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 17:23:51 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:59:40 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,4 @@ Pony::~Pony(void)
 std::string Pony::get_birthday(void)
 {
 	return (this->birthday);
-};
+}

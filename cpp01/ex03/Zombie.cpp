@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:31 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:22:11 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:59:07 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ Zombie::~Zombie()
 void Zombie::set_type(std::string type)
 {
 	this->zombie_type = type;
-};
+}
 
 void Zombie::announce(void)
 {
 	std::cout << "<" << this->zombie_name << " (" << this->zombie_type << ")> "
 	<< "Braiiiiiiinnnssss..." << std::endl;
-};
+}

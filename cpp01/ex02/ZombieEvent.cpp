@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:20 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:58:43 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:59:28 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ ZombieEvent::~ZombieEvent(void)
 void		ZombieEvent::setZombieType(Zombie *zombie, std::string type)
 {
 	zombie->set_type(type);
-};
+}
 
 Zombie		*ZombieEvent::newZombie(std::string name)
 {
 	Zombie *zombie = new Zombie(name);
 	return (zombie);
-};
+}
 
 std::string get_random_name(void)
 {
@@ -45,14 +45,14 @@ std::string get_random_name(void)
 	random_name += animal[random_num];
 	random_name += " Zombie";
 	return (random_name);
-};
+}
 
 Zombie		*ZombieEvent::randomChump(void)
 {
 	Zombie *zombie = new Zombie(get_random_name());
 	zombie->announce();
 	return (zombie);
-};
+}
 
 void		ZombieEvent::zombies_life(Zombie *zombie)
 {

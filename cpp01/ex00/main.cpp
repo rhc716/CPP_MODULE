@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 18:07:07 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 17:05:52 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:59:37 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ Pony	*ponyOnTheHeap(void)
 
 	std::cout << "Pony's birthday is [" << pony->get_birthday() << "]" << std::endl;
 	return (pony);
-};
+}
 
 void	ponyOnTheStack(void)
 {
 	Pony pony;
 
 	std::cout << "Pony's birthday is [" << pony.get_birthday() << "]" << std::endl;
-};
+}
 
 int		main()
 {

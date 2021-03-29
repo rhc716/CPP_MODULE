@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:20 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/29 20:20:21 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:59:16 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,20 @@ ZombieHorde::~ZombieHorde(void)
 void		ZombieHorde::setZombieType(Zombie *zombie, std::string type)
 {
 	zombie->set_type(type);
-};
+}
 
 Zombie		*ZombieHorde::newZombie(std::string name)
 {
 	Zombie *zombie = new Zombie(name);
 	return (zombie);
-};
+}
 
 Zombie		*ZombieHorde::randomChump(void)
 {
 	Zombie *zombie = new Zombie(get_random_name());
 	ZombieHorde::setZombieType(zombie, get_random_type());
 	return (zombie);
-};
+}
 
 void		ZombieHorde::announce(void)
 {
@@ -61,7 +61,7 @@ void		ZombieHorde::announce(void)
 		this->horde[i]->announce();
 		usleep(USLEEPTIME);
 	}
-};
+}
 
 std::string get_random_name(void)
 {
@@ -76,7 +76,7 @@ std::string get_random_name(void)
 	random_name += animal[random_num];
 	random_name += " Zombie";
 	return (random_name);
-};
+}
 
 std::string get_random_type(void)
 {
@@ -87,4 +87,4 @@ std::string get_random_type(void)
 	random_num = std::rand() % 5;
 	random_type = type[random_num];
 	return (random_type);
-};
+}

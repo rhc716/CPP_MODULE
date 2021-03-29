@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 19:55:38 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/25 11:55:04 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 21:01:52 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Contact::Contact()
 {
-};
+}
 
 Contact::~Contact()
 {
-};
+}
 
 std::string	Contact::field_names[12] =
 {
@@ -55,13 +55,13 @@ bool Contact::set_info(int index)
 		}
 	}
 	return (true);
-};
+}
 
 void Contact::show_info(void)
 {
 	for (int i = 0; i <= DarkestSecret; i++)
 		std::cout << Contact::field_names[i] << " : " << this->info[i] << std::endl;
-};
+}
 
 void Contact::show_header(void)
 {
@@ -76,4 +76,4 @@ void Contact::show_header(void)
 			std::cout << std::setw(10) << std::right << this->info[i];
 	}
 	std::cout << "|" << std::endl;
-};
+}
