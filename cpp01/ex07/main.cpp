@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 00:34:46 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/27 18:39:27 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:33:07 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,10 @@ void	io_filestream_open(std::ifstream &ifs, std::ofstream &ofs, const std::strin
 
 void	replace_line(std::string &line, const std::string &find, const std::string &replace)
 {
-	std::stringstream	ss;
-	size_t				pos;
-	size_t				find_len;
+	size_t	pos;
 
-	find_len = find.length();
-	for (size_t i = 0; i < line.length(); i++)
-	{
-		if ((pos = line.find(find, i)) == i)
-		{
-			ss << replace;
-			i += find_len;
-		}
-		if (i < line.length())
-			ss << line[i];
-	}
-	line = ss.str();
+	while ((pos = line.find(find, 0)) != std::string::npos)
+		line.replace(pos, find.length(), replace);
 }
 
 void	replace(const std::string &file_name, const std::string &find, const std::string &replace)

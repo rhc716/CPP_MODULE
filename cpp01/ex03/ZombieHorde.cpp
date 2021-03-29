@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:20 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:58:14 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/29 20:20:21 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ ZombieHorde::ZombieHorde(int n)
 
 ZombieHorde::~ZombieHorde(void)
 {
+	// delete[] nbr_zombies;
 	for(int i = 0; i < this->nbr_zombies; i++)
 	{
 		delete(this->horde[i]);
