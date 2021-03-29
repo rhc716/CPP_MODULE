@@ -1,17 +1,17 @@
 NAME = megaphone
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CPP = clang++
+CPPFLAGS = -Wall -Wextra -Werror
 
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-.c.o: 
-	$(CC) $(CFLAGS) -c $^ -o $@
+.cpp.o: 
+	$(CPP) $(CPPFLAGS) -c $^ -o $@
 
 $(NAME): $(OBJS)
-		$(CC) $(CFLAGS) -o $@ $^
+		$(CPP) $(CPPFLAGS) -o $@ $^
 
 clean: 
 	rm -f $(OBJS)

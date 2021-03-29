@@ -1,17 +1,17 @@
 NAME = replace
-CC = clang++ #-std=c++98
-CFLAGS = -Wall -Wextra -Werror
+CPP = clang++ #-std=c++98
+CPPFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-.c.o: 
-	$(CC) $(CFLAGS) -c $^ -o $@
+.cpp.o: 
+	$(CPP) $(CPPFLAGS) -c $^ -o $@
 
 $(NAME): $(OBJS)
-		$(CC) $(CFLAGS) -o $@ $^
+		$(CPP) $(CPPFLAGS) -o $@ $^
 
 clean: 
 	rm -f $(OBJS)
