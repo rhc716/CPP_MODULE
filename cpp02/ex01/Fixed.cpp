@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:31:33 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/29 22:52:05 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/30 10:52:26 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
+	std::cout << "before : " << (float)this->value << std::endl;
 	return ((float)this->value / (float)(1 << this->frac_bits));
 }
 
