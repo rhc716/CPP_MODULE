@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:37:02 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:41:00 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 02:14:46 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	if (this->hp + amount >= this->hp_max)
 	{
 		repaired = this->hp_max - this->hp;
-		this->hp = 100;
+		this->hp = this->hp_max;
 	}
 	else
 		this->hp += amount;

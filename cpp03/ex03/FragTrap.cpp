@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:49:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:41:25 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 02:14:56 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 	if (this->hp + amount >= this->hp_max)
 	{
 		repaired = this->hp_max - this->hp;
-		this->hp = 100;
+		this->hp = this->hp_max;
 	}
 	else
 		this->hp += amount;

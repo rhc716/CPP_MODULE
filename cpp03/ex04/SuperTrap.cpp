@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 22:32:08 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:09:12 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 02:15:44 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	SuperTrap::beRepaired(unsigned int amount)
 	if (this->hp + amount >= this->hp_max)
 	{
 		repaired = this->hp_max - this->hp;
-		this->hp = 100;
+		this->hp = this->hp_max;
 	}
 	else
 		this->hp += amount;

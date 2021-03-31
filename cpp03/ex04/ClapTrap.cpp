@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:38:34 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:52:04 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 02:15:26 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->hp + amount >= this->hp_max)
 	{
 		repaired = this->hp_max - this->hp;
-		this->hp = 100;
+		this->hp = this->hp_max;
 	}
 	else
 		this->hp += amount;
@@ -141,7 +141,7 @@ void	ClapTrap::restoreEnergy(unsigned int amount)
 	if (this->energy + amount >= this->energy_max)
 	{
 		restored = this->energy_max - this->energy;
-		this->energy = 100;
+		this->energy = this->energy_max;
 	}
 	else
 		this->energy += amount;
