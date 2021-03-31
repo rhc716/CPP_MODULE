@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:49:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/31 19:04:17 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/31 19:25:47 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,11 @@ void	FragTrap::meleeAttack(std::string const &target)
 	print_border(FRAGTRAP);
 }
 
+unsigned int FragTrap::skillAttack(std::string const &target, ClapTrap &target_obj)
+{
+	return (vaulthunter_dot_exe(target));
+}
+
 void	FragTrap::takeDamage(unsigned int amount)
 {
 	unsigned int damage = 0;
@@ -114,24 +119,6 @@ void	FragTrap::beRepaired(unsigned int amount)
 	print_border(FRAGTRAP);
 	std::cout << this->name << " : Repaired for " << repaired << " points of hp!" << std::endl;
 	std::cout << this->name << " : Current HP is " << this->hp << std::endl;
-	print_border(FRAGTRAP);
-}
-
-void	FragTrap::restoreEnergy(unsigned int amount)
-{
-	unsigned int restored = 0;
-
-	restored = amount;
-	if (this->energy + amount >= this->energy_max)
-	{
-		restored = this->energy_max - this->energy;
-		this->energy = 100;
-	}
-	else
-		this->energy += amount;
-	print_border(FRAGTRAP);
-	std::cout << this->name << " : Restored for " << restored << " points of energy!" << std::endl;
-	std::cout << this->name << " : Current Energy is " << this->energy << std::endl;
 	print_border(FRAGTRAP);
 }
 
@@ -178,33 +165,4 @@ unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	return (total_damage);
 }
 
-unsigned int	FragTrap::get_hp()
-{
-	return (this->hp);
-}
 
-std::string		&FragTrap::get_name()
-{
-	return (this->name);
-}
-
-unsigned int	FragTrap::get_melee_damage()
-{
-	return (this->melee_damage);
-}
-
-unsigned int	FragTrap::get_range_damage()
-{
-	return (this->range_damage);
-}
-
-void	print_border(unsigned int type_of_trap)
-{
-	usleep(T_USLEEP / 2);
-	if (type_of_trap == FRAGTRAP)
-		std::cout << CYAN;
-	else if (type_of_trap == SCARVTRAP)
-		std::cout << GREY;
-	std::cout << "==============================================================" DEFAULT << std::endl;
-	usleep(T_USLEEP / 2);
-}

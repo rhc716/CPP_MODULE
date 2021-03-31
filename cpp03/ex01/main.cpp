@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:51:30 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/30 22:52:25 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/31 19:10:16 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,15 @@ int		main()
 	frt.meleeAttack("SCV");
 	frt.rangedAttack("SCV");
 	frt.takeDamage(20);
-	frt.beRepaired(10);
-	frt.takeDamage(50);
-	frt.beRepaired(100);
-	frt.takeDamage(150);
 	frt.beRepaired(20);
-	frt.beRepaired(20);
-	frt.vaulthunter_dot_exe("SCV");
+	frt.takeDamage(110);
+	frt.beRepaired(110);
 	frt.vaulthunter_dot_exe("SCV");
 	scv.meleeAttack("R2D2");
 	scv.rangedAttack("R2D2");
-	scv.takeDamage(15);
-	scv.beRepaired(15);
-	scv.takeDamage(100);
+	scv.takeDamage(20);
+	scv.beRepaired(20);
+	scv.takeDamage(110);
 	scv.beRepaired(110);
 	scv.challengeNewcomer(frt);
 	frt.beRepaired(100);

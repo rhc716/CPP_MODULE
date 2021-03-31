@@ -6,11 +6,12 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:51:30 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/31 19:10:40 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/31 19:51:28 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 void	print_ascii()
 {
@@ -33,12 +34,26 @@ int		main()
 {
 	std::srand(std::time(NULL));
 	print_ascii();
-	FragTrap ft("R2D2");
-	ft.meleeAttack("SCV");
-	ft.rangedAttack("SCV");
-	ft.takeDamage(20);
-	ft.beRepaired(20);
-	ft.takeDamage(110);
-	ft.beRepaired(110);
-	ft.vaulthunter_dot_exe("SCV");
+	ClapTrap *frt = new FragTrap("R2D2");
+	ClapTrap *scv = new ScavTrap("SCV");
+	frt->meleeAttack("SCV");
+	frt->rangedAttack("SCV");
+	frt->takeDamage(20);
+	frt->beRepaired(20);
+	frt->takeDamage(110);
+	frt->beRepaired(110);
+	frt->skillAttack("SCV", *scv);
+	scv->meleeAttack("R2D2");
+	scv->rangedAttack("R2D2");
+	scv->takeDamage(20);
+	scv->beRepaired(20);
+	scv->takeDamage(110);
+	scv->beRepaired(110);
+	scv->skillAttack("R2D2", *frt);
+	frt->beRepaired(100);
+	frt->restoreEnergy(100);
+	scv->skillAttack("R2D2", *frt);
+	delete frt;
+	delete scv;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:49:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/30 21:53:13 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/31 19:03:48 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ FragTrap &FragTrap::operator=(const FragTrap &old_obj)
 void	FragTrap::rangedAttack(std::string const &target)
 {
 	print_border();
-	std::cout << "<" << this->name 
+	std::cout << "FR4G-TP <" << this->name 
 		<< "> attacks <" << target << "> at range, causing <"
 		<< this->range_damage << "> points of damage!" << std::endl;
 	print_border();
@@ -77,7 +77,7 @@ void	FragTrap::rangedAttack(std::string const &target)
 void	FragTrap::meleeAttack(std::string const &target)
 {
 	print_border();
-	std::cout << "<" << this->name 
+	std::cout << "FR4G-TP <" << this->name 
 		<< "> attacks <" << target << "> at melee, causing <"
 		<< this->melee_damage << "> points of damage!" << std::endl;
 	print_border();
