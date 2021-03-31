@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:38:34 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:51:41 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 01:52:04 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ ClapTrap::ClapTrap(const std::string &name)
 {
 	this->name = name;
 	this->level = 1;
-	this->hp = 100;
-	this->hp_max = 100;
-	this->energy = 100;
-	this->energy_max = 100;
+	this->hp = 80;
+	this->hp_max = 80;
+	this->energy = 80;
+	this->energy_max = 80;
 	this->melee_damage = 30;
 	this->range_damage = 20;
 	this->armor = 5;
@@ -171,6 +171,21 @@ unsigned int	ClapTrap::get_range_damage()
 	return (this->range_damage);
 }
 
+void			ClapTrap::print_member()
+{
+	print_border(CLAPTRAP);
+	std::cout << GREEN << "name : " << this->name << std::endl;
+	std::cout << GREEN << "level : " << this->level << std::endl;
+	std::cout << GREEN << "hp : " << this->hp << std::endl;
+	std::cout << GREEN << "hp_max : " << this->hp_max << std::endl;
+	std::cout << GREEN << "energy : " << this->energy << std::endl;
+	std::cout << GREEN << "energy_max : " << this->energy_max << std::endl;
+	std::cout << GREEN << "melee_damage : " << this->melee_damage << std::endl;
+	std::cout << GREEN << "range_damage : " << this->range_damage << std::endl;
+	std::cout << GREEN << "armor : " << this->armor << std::endl;
+	print_border(CLAPTRAP);
+}
+
 void	print_border(unsigned int type_of_trap)
 {
 	usleep(T_USLEEP / 2);
@@ -180,6 +195,10 @@ void	print_border(unsigned int type_of_trap)
 		std::cout << GREY;
 	else if (type_of_trap == CLAPTRAP)
 		std::cout << BLUE;
+	else if (type_of_trap == NINJATRAP)
+		std::cout << PURPLE;
+	else if (type_of_trap == SUPERTRAP)
+		std::cout << YELLOW;
 	std::cout << "==============================================================" DEFAULT << std::endl;
 	usleep(T_USLEEP / 2);
 }

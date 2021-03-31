@@ -6,11 +6,16 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:49:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:40:34 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 01:42:29 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap()
+{
+	
+}
 
 FragTrap::FragTrap(const std::string &name)
 {
@@ -23,6 +28,10 @@ FragTrap::FragTrap(const std::string &name)
 	this->melee_damage = 30;
 	this->range_damage = 20;
 	this->armor = 5;
+	this->hp_copy = this->hp;
+	this->hp_max_copy = this->hp_max;
+	this->range_damage_copy = this->range_damage;
+	this->armor_copy = this->armor;
 	print_border(FRAGTRAP);
 	std::cout << GREEN << this->name << " : online. Somebody called for an exterminator?" DEFAULT << std::endl;
 	print_border(FRAGTRAP);

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:38:34 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:51:41 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 01:51:59 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,8 @@ void	print_border(unsigned int type_of_trap)
 		std::cout << GREY;
 	else if (type_of_trap == CLAPTRAP)
 		std::cout << BLUE;
+	else if (type_of_trap == NINJATRAP)
+		std::cout << PURPLE;
 	std::cout << "==============================================================" DEFAULT << std::endl;
 	usleep(T_USLEEP / 2);
 }

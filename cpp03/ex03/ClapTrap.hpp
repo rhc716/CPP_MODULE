@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:38:27 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:51:37 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/31 22:12:57 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@
 # define BLUE		"\e[0;94m"
 # define PURPLE		"\e[0;35m"
 # define CYAN		"\e[0;36m"
-# define T_USLEEP	100000
+# define T_USLEEP	50000
 
 # define CLAPTRAP	0
 # define FRAGTRAP	1
 # define SCARVTRAP	2
+# define NINJATRAP	3
 
 class ClapTrap
 {
@@ -60,7 +61,7 @@ public:
 	virtual void			takeDamage(unsigned int amount);
 	virtual void			beRepaired(unsigned int amount);
 	void					restoreEnergy(unsigned int amount);
-		
+
 	std::string				&get_name();
 	unsigned int			get_hp();
 	unsigned int			get_melee_damage();

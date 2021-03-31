@@ -6,12 +6,13 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:51:30 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 01:57:35 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 01:57:47 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 void	print_ascii()
 {
@@ -39,24 +40,42 @@ int		main()
 {
 	std::srand(std::time(NULL));
 	print_ascii();
-	FragTrap frt("R2D2");
-	ScavTrap scv("SCV");
-	frt.meleeAttack("SCV");
-	frt.rangedAttack("SCV");
-	frt.takeDamage(20);
-	frt.beRepaired(20);
-	frt.takeDamage(110);
-	frt.beRepaired(110);
-	frt.vaulthunter_dot_exe("SCV");
-	scv.meleeAttack("R2D2");
-	scv.rangedAttack("R2D2");
-	scv.takeDamage(20);
-	scv.beRepaired(20);
-	scv.takeDamage(110);
-	scv.beRepaired(110);
-	scv.challengeNewcomer(frt);
-	frt.beRepaired(100);
-	frt.restoreEnergy(100);
-	scv.challengeNewcomer(frt);
+	ClapTrap *clap = new ClapTrap("jjagjjag");
+	FragTrap *frt = new FragTrap("R2D2");
+	ScavTrap *scv = new ScavTrap("SCV");
+	NinjaTrap *nin = new NinjaTrap("ZED");
+	NinjaTrap *nin2 = new NinjaTrap("SHEN");
+	frt->meleeAttack("SCV");
+	frt->rangedAttack("SCV");
+	frt->takeDamage(20);
+	frt->beRepaired(20);
+	frt->takeDamage(110);
+	frt->beRepaired(110);
+	frt->skillAttack("SCV", *scv);
+	scv->meleeAttack("R2D2");
+	scv->rangedAttack("R2D2");
+	scv->takeDamage(20);
+	scv->beRepaired(20);
+	scv->takeDamage(110);
+	scv->beRepaired(110);
+	scv->skillAttack("R2D2", *frt);
+	frt->beRepaired(100);
+	frt->restoreEnergy(100);
+	scv->skillAttack("R2D2", *frt);
+	nin->meleeAttack("SCV");
+	nin->rangedAttack("SCV");
+	nin->takeDamage(20);
+	nin->beRepaired(20);
+	nin->takeDamage(110);
+	nin->beRepaired(110);
+	nin->ninjaShoebox(*clap);
+	nin->ninjaShoebox(*frt);
+	nin->ninjaShoebox(*scv);
+	nin->ninjaShoebox(*nin2);
+	delete clap;
+	delete frt;
+	delete scv;
+	delete nin;
+	delete nin2;
 	return (0);
 }

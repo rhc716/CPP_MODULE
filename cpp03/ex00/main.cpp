@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:51:30 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/31 19:10:40 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/01 01:56:45 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	print_ascii()
 {
-	std::ifstream	ifs("../ascii");
+	std::string		path_1 = "./ascii";
+	std::string		path_2 = "../ascii";
+	std::ifstream	ifs;
 	char			buf[100];
 
+	ifs.open(path_1);
+	if(!ifs.is_open())
+		ifs.open(path_2);
 	if (ifs.is_open())
 	{
 		while (ifs)
