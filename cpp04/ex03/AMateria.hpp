@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/02 16:42:42 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/02 17:31:10 by hroh             ###   ########.fr       */
+/*   Created: 2021/04/02 19:18:14 by hroh              #+#    #+#             */
+/*   Updated: 2021/04/02 22:59:54 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-# include "ISquad.hpp"
-# include "ISpaceMarine.hpp"
+# include <iostream>
 
-class Squad : public ISquad
+class ICharacter;
+
+class AMateria
 {
 private:
-	int				count;
-	ISpaceMarine	**units;
+	std::string		_type;
+	unsigned int	_xp;
 
 public:
-	Squad();
-	Squad(Squad const &old_obj);
-	~Squad();
-
-	Squad &operator=(Squad const &old_obj);
-
-	int getCount() const;
-	ISpaceMarine* getUnit(int index) const;
-	int push(ISpaceMarine *unit);
+	AMateria(std::string const &type);
+	AMateria(AMateria const &old_obj);
+	virtual ~AMateria();
+	AMateria &operator=(AMateria const &old_obj);
+	std::string const	&getType() const;
+	unsigned int		getXP() const;
+	virtual AMateria	*clone() const = 0;
+	virtual void use(ICharacter &target);
 };
+
 #endif

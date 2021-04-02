@@ -14,7 +14,7 @@ OBJS2 = $(SRCS2:.cpp=.o)
 OBJS3 = $(SRCS3:.cpp=.o)
 OBJS4 = $(SRCS4:.cpp=.o)
 
-all: $(ex00) $(ex01) #$(ex02) $(ex03) 
+all: $(ex00) $(ex01) $(ex02) $(ex03) 
 
 .cpp.o: 
 	$(CPP) $(CPPFLAGS) -c $^ -o $@

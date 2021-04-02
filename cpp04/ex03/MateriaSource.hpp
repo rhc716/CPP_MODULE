@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/02 16:42:42 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/02 17:31:10 by hroh             ###   ########.fr       */
+/*   Created: 2021/04/02 21:22:15 by hroh              #+#    #+#             */
+/*   Updated: 2021/04/02 22:52:52 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-# include "ISquad.hpp"
-# include "ISpaceMarine.hpp"
+# include "IMateriaSource.hpp"
 
-class Squad : public ISquad
+class MateriaSource : public IMateriaSource
 {
 private:
-	int				count;
-	ISpaceMarine	**units;
+	AMateria *sources[4];
 
 public:
-	Squad();
-	Squad(Squad const &old_obj);
-	~Squad();
+	MateriaSource();
+	MateriaSource(MateriaSource const &old_obj);
+	~MateriaSource();
 
-	Squad &operator=(Squad const &old_obj);
-
-	int getCount() const;
-	ISpaceMarine* getUnit(int index) const;
-	int push(ISpaceMarine *unit);
+	MateriaSource &operator=(MateriaSource const &old_obj);
+	void		learnMateria(AMateria *m);
+	AMateria	*createMateria(std::string const &type);
 };
+
 #endif
