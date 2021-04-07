@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:04:32 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/07 01:24:05 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 18:42:18 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define CONV_HPP
 
 # include <iostream>
-# include <math.h>
 # include <limits>
+# include <cmath>
+# include <cstdlib>
 
 class Conv
 {

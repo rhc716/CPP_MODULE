@@ -1,5 +1,5 @@
 ex00 = convert
-CPP = clang++
+CPP = clang++ #-std=c++98
 CPPFLAGS = -Wall -Wextra -Werror
 
 SRCS1 = main.cpp Conv.cpp

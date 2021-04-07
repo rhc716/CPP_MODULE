@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:26:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/07 16:50:32 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 18:44:04 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <ctime>
 # include <unistd.h>
+# include <cstdlib>
+# include <limits>
 
 struct Data
 {

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:37:50 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/07 17:41:03 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 18:44:23 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	get_random_int()
 {
 	if (std::rand() % 2 == 0)
-		return (INT32_MIN + std::rand());
+		return (std::numeric_limits<int>::min() + std::rand());
 	else
 		return (std::rand());
 }

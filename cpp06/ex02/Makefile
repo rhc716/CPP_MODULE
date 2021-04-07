@@ -1,5 +1,5 @@
 ex00 = identify
-CPP = clang++
+CPP = clang++ #-std=c++98
 CPPFLAGS = -Wall -Wextra -Werror
 
 SRCS1 = main.cpp Base.cpp

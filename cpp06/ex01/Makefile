@@ -1,5 +1,5 @@
 ex00 = serialization
-CPP = clang++
+CPP = clang++ #-std=c++98
 CPPFLAGS = -Wall -Wextra -Werror
 
 SRCS1 = main.cpp Data.cpp

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:06:12 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/07 02:47:18 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 18:40:24 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	Conv::to_char()
 	this->char_val = static_cast<char>(this->double_val);
 	if (std::isinf(this->double_val) || std::isnan(this->double_val))
 		throw ImpossibleException();
-	else if (this->double_val < std::numeric_limits<char>::lowest() ||
+	else if (this->double_val < std::numeric_limits<char>::min() ||
 			this->double_val > std::numeric_limits<char>::max())
 		throw ImpossibleException();
 	else if (this->char_val < 32 || this->char_val > 126)
@@ -60,7 +60,7 @@ void	Conv::to_int()
 	if (std::isinf(this->double_val) || std::isnan(this->double_val))
 		throw ImpossibleException();
 	if (std::numeric_limits<int>::max() < this->double_val ||
-		std::numeric_limits<int>::lowest() > this->double_val)
+		std::numeric_limits<int>::min() > this->double_val)
 		throw ImpossibleException();
 }
 
