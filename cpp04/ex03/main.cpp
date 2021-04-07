@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 19:38:39 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/03 01:27:03 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 15:01:37 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main()
 
 	std::cout << "##########################################\n" << std::endl;
 
-	for (int i = -1; i < 5; i++)
+	for (int i = -1; i < 5; ++i)
 	{
 		std::cout << "i : " << i << std::endl;
 		me->use(i, *bob);
@@ -49,7 +49,7 @@ int main()
 
 	std::cout << "\n##########################################\n" << std::endl;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 5; ++i)
 		me->unequip(0);
 
 	delete materia_1;
@@ -59,7 +59,7 @@ int main()
 
 	materia_1 = src_1->createMateria("ice");
 	me->equip(materia_1);
-	for (int i = 1; i < 6; i++)
+	for (int i = 1; i < 6; ++i)
 	{
 		me->use(0, *bob);
 		std::cout << "i : " << i << " / _xp : " << materia_1->getXP() << std::endl;

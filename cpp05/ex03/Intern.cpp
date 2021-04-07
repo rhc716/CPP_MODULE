@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 21:07:32 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/07 02:51:34 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 15:01:51 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ Form *Intern::makeForm(std::string const &formName, std::string const &target) c
 		,{"robotomy request", &new_form_robotomyrequest}
 		,{"presidential pardon", &new_form_presidentialpardon}
 	};
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; ++i)
 		if (selectform[i].formname == formName)
 			ret = selectform[i].func(target);
 	if (ret != NULL)

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:37:02 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 02:14:46 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 15:00:20 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,7 +215,7 @@ void	ScavTrap::enemy_10_kill_challenges(ClapTrap &challenger)
 	int			i;
 
 	set_spec(50, -5, 5);
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 10; ++i)
 	{
 		horde[i] = new ScavTrap(*this, 1);
 		horde[i]->append_name_nbr(i + 1);
@@ -224,7 +224,7 @@ void	ScavTrap::enemy_10_kill_challenges(ClapTrap &challenger)
 	std::cout << "10 enemies are coming..." << std::endl;
 	print_border(FRAGTRAP);
 	fail = false;
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 10; ++i)
 	{
 		fail = fight_to_challenger(challenger, *horde[i]);
 		if (fail == true)

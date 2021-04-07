@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 19:55:38 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/29 21:01:52 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 14:58:18 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool Contact::set_info(int index)
 
 	this->index = index;
 	name_len_sum = 0;
-	for (int i = 0; i <= DarkestSecret; i++)
+	for (int i = 0; i <= DarkestSecret; ++i)
 	{
 		std::cout << Contact::field_names[i] << " : ";
 		std::getline(std::cin, info[i]);
@@ -59,7 +59,7 @@ bool Contact::set_info(int index)
 
 void Contact::show_info(void)
 {
-	for (int i = 0; i <= DarkestSecret; i++)
+	for (int i = 0; i <= DarkestSecret; ++i)
 		std::cout << Contact::field_names[i] << " : " << this->info[i] << std::endl;
 }
 
@@ -67,7 +67,7 @@ void Contact::show_header(void)
 {
 	std::cout << "|";
 	std::cout << std::setw(10) << std::right << index;
-	for (int i = FirstName; i <= NickName; i++)
+	for (int i = FirstName; i <= NickName; ++i)
 	{
 		std::cout << "|";
 		if (info[i].length() > 10)

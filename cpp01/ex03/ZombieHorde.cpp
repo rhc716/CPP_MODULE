@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:20 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/29 20:59:16 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 14:59:49 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ZombieHorde::ZombieHorde(int n)
 	std::srand(std::time(NULL));
 	std::cout << "Hordes of zombies gather...\n\n";
 	this->horde = new Zombie*[n];
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; ++i)
 	{
 		this->horde[i] = randomChump();
 	}
@@ -27,7 +27,7 @@ ZombieHorde::ZombieHorde(int n)
 ZombieHorde::~ZombieHorde(void)
 {
 	// delete[] nbr_zombies;
-	for(int i = 0; i < this->nbr_zombies; i++)
+	for(int i = 0; i < this->nbr_zombies; ++i)
 	{
 		delete(this->horde[i]);
 		usleep(USLEEPTIME);

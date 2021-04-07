@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 17:21:33 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/26 20:58:52 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 14:59:40 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main()
 	zombie = ev.newZombie("Named Zombies");
 	zombie->announce();
 	ev.zombies_life(zombie);
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; ++i)
 	{
 		usleep(USLEEPTIME);
 		std::cout << std::endl;

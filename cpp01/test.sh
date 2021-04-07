@@ -12,7 +12,7 @@ pause(){
 # ex00 ~ ex06
 
 cc="clang++ -Wall -Wextra -Werror "
-for ((i=0; i<7; i++));
+for ((i=0; i<7; ++i));
 do
 	echo -e "$color1 # ex0${i}" 
 	echo -e "$color2"

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:01:33 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/02 18:38:08 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 15:01:10 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Squad::Squad() :
 Squad::Squad(Squad const &old_obj) :
 	count(0), units(NULL)
 {
-	for (int i = 0; i < old_obj.getCount(); i++)
+	for (int i = 0; i < old_obj.getCount(); ++i)
 		this->push(old_obj.getUnit(i)->clone());
 }
 
 Squad::~Squad()
 {
-	for (int i = 0; i < this->count; i++)
+	for (int i = 0; i < this->count; ++i)
 			delete (this->units[i]);
 	delete[] (this->units);
 }
@@ -35,12 +35,12 @@ Squad &Squad::operator=(Squad const &old_obj)
 {
 	if (this->units)
 	{
-		for (int i = 0; i < this->count; i++)
+		for (int i = 0; i < this->count; ++i)
 			delete (this->units[i]);
 		delete[] (this->units);
 		this->units = NULL;
 	}
-	for (int i = 0; i < old_obj.getCount(); i++)
+	for (int i = 0; i < old_obj.getCount(); ++i)
 		this->push(old_obj.getUnit(i)->clone());
 	return (*this);
 }
@@ -63,11 +63,11 @@ int 		Squad::push(ISpaceMarine *unit)
 		return (this->count);
 	if (this->units)
 	{
-		for (int i = 0; i < this->count; i++)
+		for (int i = 0; i < this->count; ++i)
 			if (this->units[i] == unit)
 				return (this->count);
 		ISpaceMarine **expand = new ISpaceMarine*[this->count + 1];
-		for (int i = 0; i < this->count; i++)
+		for (int i = 0; i < this->count; ++i)
 			expand[i] = this->units[i];
 		delete[] (this->units);
 		this->units = expand;

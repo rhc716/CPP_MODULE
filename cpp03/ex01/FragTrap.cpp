@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:49:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/01 02:14:07 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/07 14:59:59 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 		std::cout << this->name << PURPLE " : vaulthunter_dot_exe Running..." DEFAULT << std::endl;
 		std::cout << this->name << PURPLE " : Hacking the Vault Hunters' skills..." DEFAULT << std::endl;
 		print_border(FRAGTRAP);
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 5; ++i)
 		{
 			random_num = std::rand() % 10;
 			std::cout << this->name << " : [" << i + 1 << "] " GREEN << skill[random_num] << std::endl;
