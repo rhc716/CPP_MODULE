@@ -11,6 +11,8 @@ make -s -C ./ex02
 
 mv ./ex00/convert .
 mv ./ex01/serialization .
+mv ./ex02/identify .
+
 
 make clean -s -C ./ex00
 make clean -s -C ./ex01
@@ -19,6 +21,16 @@ make clean -s -C ./ex02
 echo -en "$color1"
 echo -e "ex00"
 echo -en "$color2"
+
+echo -en "$color3"
+echo -e "./convert "
+echo -en "$color2"
+./convert 
+
+echo -en "$color3"
+echo -e "./convert abc"
+echo -en "$color2"
+./convert abc
 
 echo -en "$color3"
 echo -e "./convert 42"
@@ -100,22 +112,32 @@ echo -e "./convert -1.79769e+308"
 echo -en "$color2"
 ./convert -1.79769e+308
 
-echo -en "$color3"
-echo -e "./convert abc"
-echo -en "$color2"
-./convert abc
-
 echo ""
 echo -en "$color1"
 echo -e "ex01"
 echo -en "$color2"
 
-for ((j=0; j<3; ++j));
+for ((j=0; j<5; ++j));
 do
 	echo -en "$color3"
 	echo -e "./serialization"
 	echo -en "$color2"
 	./serialization
 done
+
+echo ""
+echo -en "$color1"
+echo -e "ex02"
+echo -en "$color2"
+
+for ((j=0; j<5; ++j));
+do
+	echo -en "$color3"
+	echo -e "./identify"
+	echo -en "$color2"
+	./identify
+done
+
 rm ./convert
 rm ./serialization
+rm ./identify
