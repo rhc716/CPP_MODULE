@@ -10,6 +10,7 @@ make -s -C ./ex01
 make -s -C ./ex02
 
 mv ./ex00/convert .
+mv ./ex01/serialization .
 
 make clean -s -C ./ex00
 make clean -s -C ./ex01
@@ -104,4 +105,17 @@ echo -e "./convert abc"
 echo -en "$color2"
 ./convert abc
 
+echo ""
+echo -en "$color1"
+echo -e "ex01"
+echo -en "$color2"
+
+for ((j=0; j<3; ++j));
+do
+	echo -en "$color3"
+	echo -e "./serialization"
+	echo -en "$color2"
+	./serialization
+done
 rm ./convert
+rm ./serialization

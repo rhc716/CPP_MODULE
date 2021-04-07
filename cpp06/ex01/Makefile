@@ -1,0 +1,23 @@
+ex00 = serialization
+CPP = clang++
+CPPFLAGS = -Wall -Wextra -Werror
+
+SRCS1 = main.cpp Data.cpp
+OBJS1 = $(SRCS1:.cpp=.o)
+
+all: $(ex00)
+
+.cpp.o: 
+	$(CPP) $(CPPFLAGS) -c $^ -o $@
+
+$(ex00): $(OBJS1)
+		$(CPP) $(CPPFLAGS) -o $@ $^
+clean: 
+	rm -f $(OBJS1)
+
+fclean: clean
+	rm -f $(ex00)
+
+re: fclean all
+
+.PHONY: all clean fclean re
