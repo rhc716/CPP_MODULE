@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 18:33:11 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/15 20:31:16 by hroh             ###   ########.fr       */
+/*   Updated: 2021/04/15 20:51:56 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Mutantstack.hpp"
+#include "MutantStack.hpp"
 
 int main()
 {
