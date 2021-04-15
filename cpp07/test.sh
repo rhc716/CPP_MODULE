@@ -7,14 +7,10 @@ color4=\\033[1\;31m # red
 
 #-std=c++98
 if [[ "$OSTYPE" == *"gnu"* ]]; then
-	sed -i "s/#-std=c++98/-std=c++98/g" ./ex00/Makefile
-	sed -i "s/#-std=c++98/-std=c++98/g" ./ex01/Makefile
-	sed -i "s/#-std=c++98/-std=c++98/g" ./ex02/Makefile
+	sed -i "s/#-std=c++98/-std=c++98/g" ./ex00/Makefile ./ex01/Makefile ./ex02/Makefile
 else
 	# BSD
-	sed -i '' "s/#-std=c++98/-std=c++98/g" ./ex00/Makefile
-	sed -i '' "s/#-std=c++98/-std=c++98/g" ./ex01/Makefile
-	sed -i '' "s/#-std=c++98/-std=c++98/g" ./ex02/Makefile
+	sed -i '' "s/#-std=c++98/-std=c++98/g" ./ex00/Makefile ./ex01/Makefile ./ex02/Makefile
 fi
 
 make -s -C ./ex00
@@ -22,14 +18,10 @@ make -s -C ./ex01
 make -s -C ./ex02
 
 if [[ "$OSTYPE" == *"gnu"* ]]; then
-	sed -i "s/-std=c++98/#-std=c++98/g" ./ex00/Makefile
-	sed -i "s/-std=c++98/#-std=c++98/g" ./ex01/Makefile
-	sed -i "s/-std=c++98/#-std=c++98/g" ./ex02/Makefile
+	sed -i "s/-std=c++98/#-std=c++98/g" ./ex00/Makefile ./ex01/Makefile ./ex02/Makefile
 else
 	# BSD
-	sed -i '' "s/-std=c++98/#-std=c++98/g" ./ex00/Makefile
-	sed -i '' "s/-std=c++98/#-std=c++98/g" ./ex01/Makefile
-	sed -i '' "s/-std=c++98/#-std=c++98/g" ./ex02/Makefile
+	sed -i '' "s/-std=c++98/#-std=c++98/g" ./ex00/Makefile ./ex01/Makefile ./ex02/Makefile
 fi
 
 mv ./ex00/00 .

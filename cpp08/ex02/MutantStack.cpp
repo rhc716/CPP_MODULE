@@ -1,25 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   MutantStack.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/08 18:38:03 by hroh              #+#    #+#             */
-/*   Updated: 2021/04/09 15:03:03 by hroh             ###   ########.fr       */
+/*   Created: 2021/04/15 18:47:44 by hroh              #+#    #+#             */
+/*   Updated: 2021/04/15 18:50:30 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
-
-# include <iostream>
-
-template <typename T>
-void	iter(T *array, size_t length, void (*func)(T &))
-{
-	for (size_t i = 0; i < length; ++i)
-		func(array[i]);
-}
-
-#endif
